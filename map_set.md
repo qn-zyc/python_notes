@@ -38,21 +38,30 @@ print(res)
 print(res['name']['first'])
 ```
 
+### 元组可以作为字典的key
+
+```python
+matrix = {}
+matrix[(2, 3, 4)] = 88
+matrix[(7, 8, 9)] = 99
+print matrix[(2, 3, 4)]
+```
 
 
-# 访问
+
+## 访问
 
 ```python
 D['food']
 ```
 
-# 修改值
+## 修改值
 
 ```python
 D['quantity'] += 1
 ```
 
-# 遍历
+## 遍历
 
 ```python
 for k in res.keys():
@@ -78,7 +87,7 @@ for (key, value) in m.items():
 	print(key, '=>', value)
 ```
 
-# 判断键是否存在
+## 判断键是否存在
 
 访问不存在的键将会报错。
 
@@ -102,7 +111,7 @@ v = res.get('a', 0)
 v = res['a'] if 'a' in res else 0
 ```
 
-# update合并
+## update合并
 
 ```python
 >>> D1 = {'a':1, 'b':2}
@@ -114,7 +123,7 @@ v = res['a'] if 'a' in res else 0
 {'a': 3, 'c': 4}
 ```
 
-# 排序
+## 排序
 
 ```python
 m = {"a": 1, "c": 2, "b": 3}
@@ -137,6 +146,15 @@ sorted(t.iteritems(), key=operator.itemgetter(1), reverse=True)
 `iteritems()` 返回一个迭代器，遍历字典的所有元素
 
 `operator.itemgetter(1)` 返回一个函数，这个函数接收一个列表，并且返回第1个元素，如果传入0就是按key排序了。
+
+## 拷贝
+
+```python
+d = {"name": "abc"}
+d2 = d.copy()
+```
+
+
 
 
 

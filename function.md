@@ -103,8 +103,9 @@ x, y = move(100, 100, 60, math.pi / 6)
 (151.96152422706632, 70.0)
 ```
 
-
 # 匿名函数
+
+格式：`lambda args: expression`
 
 ```python
 # -*- coding: utf-8 -*

@@ -295,3 +295,26 @@ TypeError: 'tuple' object does not support item assignment
 >>> x
 (1,)
 ```
+
+
+
+## 排序
+
+方法1：先将元组转换成列表，排序，然后转换成元组
+
+```python
+t = ('c', 'b', 'd', 'a')
+tmp = list(t)
+tmp.sort()
+t = tuple(tmp)
+print t
+```
+
+方法2：使用 `sorted`
+
+```python
+t = ('c', 'b', 'd', 'a')
+t = sorted(t)
+print t
+```
+

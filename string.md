@@ -30,7 +30,7 @@ s = "hello 'world' !"
 
 # 长度和下标访问
 
-```py
+```python
 >>> s = "hello"
 >>> len(s)
 5
@@ -44,7 +44,7 @@ IndexError: string index out of range
 
 不适用于中文字符串：
 
-```py
+```python
 >>> s = "你好"
 >>> s[0]
 '\xe4'
@@ -56,7 +56,7 @@ IndexError: string index out of range
 
 # 反向索引
 
-```py
+```python
 >>> s = "hello"
 >>> s[-1]
 'o'
@@ -68,7 +68,7 @@ IndexError: string index out of range
 
 # 分片
 
-```py
+```python
 >>> s = "abcdefg"
 >>> s[1:3]
 'bc'
@@ -80,7 +80,7 @@ IndexError: string index out of range
 
 还可以有第三个参数，表示步进，步进的默认值为1：
 
-```py
+```python
 >>> s = 'abcdefg'
 >>> s[1:len(s):2]
 'bdf'
@@ -88,7 +88,7 @@ IndexError: string index out of range
 
 步进还可以是负值：
 
-```py
+```python
 >>> s[len(s):0:-2]
 'gec'
 ```
@@ -96,7 +96,7 @@ IndexError: string index out of range
 
 # 字符串连接
 
-```py
+```python
 >>> s1 = "abc"
 >>> s2 = "def"
 >>> s1 + s2
@@ -105,7 +105,16 @@ IndexError: string index out of range
 'abcabcabc'
 ```
 
-```py
+`+` 表达式不能混合字符串和数字：
+
+```python
+s = 'hello'
+s + 9  # TypeError: cannot concatenate 'str' and 'int' objects
+```
+
+
+
+```python
 >>> title = "Meaning " 'of' " Life"
 >>> title
 'Meaning of Life'
@@ -113,7 +122,8 @@ IndexError: string index out of range
 
 # 字符串查找
 
-```py
+```python
+'a' in x
 s.find("")  # 返回下标，如果找不到，返回-1
 s.index("")  # 返回下标，如果找不到，报错
 ```
@@ -122,7 +132,7 @@ s.index("")  # 返回下标，如果找不到，报错
 
 使用原始(raw)字符串常量，去掉反斜线转义机制。
 
-```py
+```python
 >>> path = r'C:\new\text.data'
 >>> path
 'C:\\new\\text.data'
@@ -130,7 +140,7 @@ s.index("")  # 返回下标，如果找不到，报错
 
 # 转换
 
-```py
+```python
 >>> int("42"), str(42)
 (42, '42')
 >>> float("1.5"), str(3.14)
@@ -139,7 +149,7 @@ s.index("")  # 返回下标，如果找不到，报错
 
 ASCII码转换：
 
-```py
+```python
 >>> ord('s')
 115
 >>> chr(115)
@@ -148,7 +158,7 @@ ASCII码转换：
 
 # 格式化
 
-```py
+```python
 >>> 'That is %d %s bird!' % (1, 'dead')
 'That is 1 dead bird!'
 ```
@@ -186,7 +196,7 @@ flags取值：
 
 浮点数：
 
-```py
+```python
 >>> x = 1.23
 >>> '%-6.2f | %05.2f | %+06.1f' % (x, x, x)
 '1.23   | 01.23 | +001.2'
@@ -194,14 +204,14 @@ flags取值：
 
 使用 * 指定从参数列表中获取width和precision:
 
-```py
+```python
 >>> '%f, %.2f, %.*f' % (1/3.0, 1/3.0, 4, 1/3.0)
 '0.333333, 0.33, 0.3333'
 ```
 
 使用字典填充：
 
-```py
+```python
 >>> '%(n)d %(x)s' % {"n":1, "x":"spam"}
 '1 spam'
 ```
@@ -212,14 +222,14 @@ flags取值：
 
 # 字符串help
 
-```py
+```python
 >>> dir(s)
 ['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
 ```
 
 具体某个属性的作用：
 
-```py
+```python
 >>> help(s.find)
 
 Help on built-in function find:
@@ -237,7 +247,7 @@ find(...)
 
 # 模式匹配
 
-```py
+```python
 import re
 
 match = re.match("Hello[ \t]*(.*)world", "Hello python world")
