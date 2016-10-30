@@ -32,4 +32,3 @@ print sys.argv
 执行 `python test.py hello ad ds "dd"`
 输出: `['test.py', 'hello', 'ad', 'ds', 'dd']`
 
-
