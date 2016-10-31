@@ -107,6 +107,16 @@ for i, item in enumerate(list):
 	print i, ":", item  # 0:2, 1:3, 2:1
 ```
 
+### 遍历并修改列表值
+
+```python
+L = [1, 2, 3]
+for i in range(len(L)):
+	L[i] += 1
+```
+
+
+
 ## 拷贝
 
 ```python
