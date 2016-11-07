@@ -93,6 +93,47 @@ print(intersect) # ['S', 'A', 'M']
 ```
 
 
+
+### 列表解析中嵌套for
+
+```python
+res = [x + y for x in [0, 1, 2] for y in [100, 200, 300]]
+print res  # [100, 200, 300, 101, 201, 301, 102, 202, 302]
+```
+
+等效于下面的写法：
+
+```python
+res = []
+for x in [0, 1, 2]:
+	for y in [100, 200, 300]:
+		res.append(x + y)
+print res
+```
+
+**嵌套for从句中附加if**
+
+```python
+res = [(x, y) for x in range(5) if x % 2 == 0 for y in range(5) if y % 2 == 1]
+print res  # [(0, 1), (0, 3), (2, 1), (2, 3), (4, 1), (4, 3)]
+```
+
+等效于：
+
+```python
+res = []
+for x in range(5):
+	if x % 2 == 0:
+		for y in range(5):
+			if y % 2 == 1:
+				res.append((x, y))
+print res
+```
+
+
+
+
+
 ## 遍历
 
 ```python
