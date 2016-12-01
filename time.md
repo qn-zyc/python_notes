@@ -27,6 +27,18 @@ print localTime[0]  # 2016
 
 
 
+## 获取时间戳
+
+```python
+# time.struct_time(tm_year=2100, tm_mon=12, tm_mday=12, tm_hour=12, tm_min=12, tm_sec=12, tm_wday=6, tm_yday=346, tm_isdst=-1)
+time_arr = time.strptime('2100-12-12 12:12:12', '%Y-%m-%d %H:%M:%S')
+time.mktime(time_arr)  # 4132267932.0
+```
+
+
+
+
+
 # 格式化时间
 
 ```python
