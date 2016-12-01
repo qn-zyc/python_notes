@@ -84,3 +84,41 @@ python中时间日期格式化符号：
 
 
 
+# datetime
+
+## 获取当前时间
+
+```python
+In [11]: datetime.datetime.now()
+Out[11]: datetime.datetime(2016, 12, 1, 15, 32, 16, 512545)
+    
+# 获取毫秒值
+In [33]: datetime.datetime.now().microsecond / 1000
+Out[33]: 434
+```
+
+
+
+## 时间运算
+
+```python
+In [13]: d2 = d1 + datetime.timedelta(seconds=10)
+
+In [14]: d1
+Out[14]: datetime.datetime(2016, 12, 1, 15, 33, 7, 172147)
+
+In [15]: d2
+Out[15]: datetime.datetime(2016, 12, 1, 15, 33, 17, 172147)
+```
+
+
+
+## 格式化
+
+```python
+In [16]: d1 = datetime.datetime.now()
+
+In [17]: d1.strftime('%Y-%m-%d %H:%M:%S')
+Out[17]: '2016-12-01 15:34:16'
+```
+
