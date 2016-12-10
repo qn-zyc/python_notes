@@ -18,6 +18,18 @@ response = urllib2.urlopen("http://cn.bing.com", timeout=5)  # 5秒后超时
 
 
 
+## POST
+
+```python
+data = urllib.urlencode(data)
+req = urllib2.Request(url, data)
+resp = urllib2.urlopen(req).read()
+```
+
+
+
+
+
 # httplib
 
 ## 访问https网页
