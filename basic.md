@@ -96,3 +96,17 @@ if isinstance(L, list):
 	print('yes')
 ```
 
+
+
+# pip
+
+## 安装到指定目录
+
+用户目录下面，.pip目录下建立pip.conf文件
+
+```
+[install]
+
+install-option=--prefix=~/.local
+```
+
