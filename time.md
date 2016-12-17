@@ -92,9 +92,19 @@ python中时间日期格式化符号：
 In [11]: datetime.datetime.now()
 Out[11]: datetime.datetime(2016, 12, 1, 15, 32, 16, 512545)
     
+In [3]: datetime.date.today()
+Out[3]: datetime.date(2016, 12, 14)
+    
 # 获取毫秒值
 In [33]: datetime.datetime.now().microsecond / 1000
 Out[33]: 434
+    
+# 从时间戳获取时间
+datetime.datetime.fromtimestamp(1480929026)
+
+# 从datetime获取时间戳
+In [10]: time.mktime(datetime.datetime.now().timetuple())
+Out[10]: 1481694783.0
 ```
 
 
@@ -109,6 +119,10 @@ Out[14]: datetime.datetime(2016, 12, 1, 15, 33, 7, 172147)
 
 In [15]: d2
 Out[15]: datetime.datetime(2016, 12, 1, 15, 33, 17, 172147)
+    
+# 昨天
+In [4]: datetime.date.today() - datetime.timedelta(days=1)
+Out[4]: datetime.date(2016, 12, 13)
 ```
 
 
