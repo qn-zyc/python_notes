@@ -147,6 +147,16 @@ sorted(t.iteritems(), key=operator.itemgetter(1), reverse=True)
 
 `operator.itemgetter(1)` 返回一个函数，这个函数接收一个列表，并且返回第1个元素，如果传入0就是按key排序了。
 
+```python
+In [8]: m
+Out[8]: {'a': 1, 'b': 10, 'c': 3, 'd': 2}
+
+In [9]: [{k: m[k]} for k in sorted(m.keys())]
+Out[9]: [{'a': 1}, {'b': 10}, {'c': 3}, {'d': 2}]
+```
+
+
+
 ## 拷贝
 
 ```python

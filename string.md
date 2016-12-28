@@ -128,6 +128,18 @@ s.find("")  # 返回下标，如果找不到，返回-1
 s.index("")  # 返回下标，如果找不到，报错
 ```
 
+## 在utf8字符串里查找
+
+```python
+    if not isinstance(content, unicode):
+        content = content.decode('utf8')
+    c = len(content)
+    if content.find(u'【娱票儿】') >= 0:
+        return c
+```
+
+
+
 # 不转义
 
 使用原始(raw)字符串常量，去掉反斜线转义机制。
@@ -256,3 +268,31 @@ print(match.groups())  # ('python ',)
 
 print(match.group(1))  # python 0是整个字符串
 ```
+
+
+# 编码
+
+## 判断是否是unicode编码
+
+```python
+    if not isinstance(content, unicode):
+        content = content.decode('utf8')
+```
+
+
+
+## 编码转换
+
+```python
+In [27]: s = '中'
+
+In [28]: s
+Out[28]: '\xe4\xb8\xad'  # 这是python自己的编码
+    
+In [30]: s = s.decode('utf8')  # 把Python的编码转成utf8编码
+Out[30]: u'\u4e2d'  # 这是unicode编码
+    
+In [33]: s.encode('utf8')  # 把utf8编码转换成Python自己的编码
+Out[33]: '\xe4\xb8\xad'
+```
+

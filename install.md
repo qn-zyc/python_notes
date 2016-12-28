@@ -15,3 +15,15 @@
 
 `yum install mysql-python`
 
+
+
+# pip
+
+## centos
+
+下载 [get-pip.py](https://pip.pypa.io/en/stable/installing/)
+
+执行: `python get-pip.py`
+
+
+

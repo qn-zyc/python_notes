@@ -23,7 +23,7 @@ reload(trees)
 
 # 启动参数
 
-```py
+```python
 import sys
 
 print sys.argv
@@ -108,5 +108,16 @@ if isinstance(L, list):
 [install]
 
 install-option=--prefix=~/.local
+```
+
+
+
+# 打印错误堆栈信息
+
+```python
+import traceback
+
+except Exception as e:
+    print traceback.format_exc()
 ```
 
