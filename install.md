@@ -19,11 +19,37 @@
 
 # pip
 
-## centos
+## centos 安装
 
 下载 [get-pip.py](https://pip.pypa.io/en/stable/installing/)
 
 执行: `python get-pip.py`
 
 
+## 更新包
 
+更新pip:
+
+```bash
+pip install -U pip
+```
+
+使用 `pip install -h` 查看 install 的帮助信息。
+
+## 查看已安裝包列表
+
+```bash
+pip freeze
+```
+
+## 卸载包
+
+```bash
+pip uninstall package_name
+```
+
+## 查询包
+
+```bash
+pip search "package_name"
+```

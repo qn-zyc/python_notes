@@ -1,8 +1,40 @@
+# 路径
+
+## join
+
+```python
+os.path.join(dir, file)
+```
+
+## 绝对路径
+
+```python
+abs_path = os.path.abspath(file_name)
+```
+
+
+# 文件信息
+
+```py
+import os, stat
+
+file_stat = os.stat(file_name)
+# 文件大小
+file_stat[stat.ST_SIZE
+# 创建时间
+file_stat[stat.ST_CTIME]
+# 最后修改时间
+file_stat[stat.ST_MTIME]
+# 最后访问时间
+file_stat[stat.ST_ATIME]
+```
+
+
 # 创建
 
 ## 创建一个可写的文件
 
-```py
+```python
 >>> f = open('data.txt', 'w')
 >>> f.write('hello\n')
 >>> f.write('world\n')
@@ -13,7 +45,7 @@
 
 ## 读取文件
 
-```py
+```python
 try:
 	f = open("data.txt", 'r')
 	print f.read()  # 会读取所有内容
@@ -26,12 +58,12 @@ finally:
 
 下面是简洁形式：
 
-```py
+```python
 with open("data.txt", "r") as f:
 	print f.read()
 ```
 
-```py
+```python
 with open("data.txt", "r") as f:
 	for line in f:
 		print line
@@ -46,13 +78,19 @@ with open("data.txt", "r") as f:
 - readline()可以每次读取一行内容
 - readlines()一次读取所有内容并按行返回list
 
-```py
+```python
 with open("data.txt", "r") as f:
 	while True:
 		line = f.readline()
 		if not line:
 			break
 		print line
+```
+
+## 读取目录
+
+```python
+os.listdir('/path')  # 返回子目录或文件的名称
 ```
 
 
@@ -82,5 +120,17 @@ with open('eggs.csv', 'wb') as csvfile:
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
     spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+```
+
+### windows下防止乱码
+
+```python
+    with open(filename, 'wb') as f:
+        # windows下防止乱码
+        f.write('\xEF\xBB\xBF')
+        w = csv.writer(f)
+        w.writerow(title)
+        for d in data:
+            w.writerow(d)
 ```
 

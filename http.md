@@ -26,7 +26,12 @@ req = urllib2.Request(url, data)
 resp = urllib2.urlopen(req).read()
 ```
 
+### 设置header
 
+```python
+req = urllib2.Request(url, data)
+req.headers.setdefault('Content-Type', 'text/xml; charset=utf-8')
+```
 
 
 
