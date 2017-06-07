@@ -34,46 +34,6 @@ print sys.argv
 
 
 
-# 模块
-
-## import & from
-
-被导入的模块 const.py
-
-```python
-A = "hello"
-B = "world"
-```
-
-hello.py
-
-```python
-import const
-
-print(const.A, const.B)
-```
-
-输出：`('hello', 'world')`
-
-只导入特定属性
-
-```python
-from const import A
-
-print(A)  # hello
-```
-
-## 列举模块的属性
-
-```python
-import const
-
-print(dir(const))
-```
-
-```python
-['A', 'B', '__builtins__', '__doc__', '__file__', '__name__', '__package__']
-```
 
 
 

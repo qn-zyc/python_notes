@@ -1,3 +1,7 @@
+# 安装路径
+
+mac 上是 `/Library/Python/2.7/site-packages`
+
 # MySQLdb
 
 - 下载 <https://pypi.python.org/pypi/MySQL-python/1.2.5#downloads>
@@ -53,3 +57,9 @@ pip uninstall package_name
 ```bash
 pip search "package_name"
 ```
+## 查看需要更新的包
+
+```python
+pip list --outdated	
+```
+
