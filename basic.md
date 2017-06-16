@@ -33,6 +33,35 @@ print sys.argv
 输出: `['test.py', 'hello', 'ad', 'ds', 'dd']`
 
 
+# 文档
+
+## 通过 `__doc__` 查看各种文档
+
+```py
+""" for test something """
+
+
+def func():
+    """ I am func.doc """
+    pass
+
+
+class Spam(object):
+    """ I am spam.doc """
+
+    def method(self):
+        """ I am spam.method.doc """
+        pass
+
+
+def main():
+    """ the main function """
+    print __doc__
+    print func.__doc__
+    print Spam.__doc__
+    print Spam.method.__doc__
+```
+
 
 
 
